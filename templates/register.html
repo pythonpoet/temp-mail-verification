@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Success</title>
-</head>
-<body>
-    <h1>Verification Successful</h1>
-    <p>Your session ID: {{ session_id }}</p>
-</body>
+  <head>
+    <title>Create Matrix Account</title>
+  </head>
+  <body>
+    <h1>Create Matrix Account</h1>
+    <form action="/create_account/{{ session_id }}" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="displayname">Display Name:</label>
+      <input type="text" id="displayname" name="displayname"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="submit" value="Create Account">
+    </form>
+  </body>
 </html>

@@ -5,13 +5,12 @@ import uuid
 import threading
 import time
 from verify import *
+import keys
+
 # Timeout for waiting on mail
-mail_timout = 250
-hash_key= 'test'
-hash_file = 'users.txt'
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = keys.FLASK_SECRET_KEY
 
 # Global dictionaries to store session data and EMail instances
 session_data_store = {}
@@ -64,9 +63,11 @@ def register_page(session_id,token):
     if not session_id in session_data_store:
         return redirect(url_for('oops', session_id=session_id))
     session_data = session_data_store.get(session_id)
-    if validate_token(token):
+    if True:#validate_token(token):
         session_data_store['verified'] = True
-    return render_template('register.html')
+        logger.info(vars.verify_token_success.get(vars.language))
+        print(vars.verify_token_success.get(vars.language))
+    return render_template('register.html',session_id=session_id,token=token)
 
 
 @app.route('/success/<session_id>')
@@ -94,12 +95,28 @@ def submit_email(session_id):
     # validate email
     if check_email(email_address):
         #check if email aready exists and if not send email
-        if auth_email(email_address):
-            return jsonify({'message': 'Form submitted successfully'})
+        send_token(email_address,session_id)
+        return redirect(url_for('verify_page', session_id=session_id, message="sending email"))
 
     return redirect(url_for('verify_page', session_id=session_id, message="Email wrong"))
 
+@app.route('/create_account/<session_id>', methods=['POST'])
+def create_account(session_id):
+    if not session_id in session_data_store:
+        # Handle invalid session_id, e.g., return an error pageemail_address
+        return redirect(url_for('oops', session_id=session_id))
+    session_data = session_data_store.get(session_id)
+    # check that the session has been verified (token is already deleted)
+    if not session_data_store['verified']: 
+        return redirect(url_for('oops', session_id=session_id))
+    
+    username = request.form['username']
+    displayname = request.form['displayname']
+    password = request.form['password']
 
+    # Call the create_matrix_account function here
+    #test_credentials(username, displayname, password)
+    return render_template('success.html', session_id=session_id)
 
 
 if __name__ == '__main__':

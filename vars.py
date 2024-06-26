@@ -27,3 +27,6 @@ auth_code_success={
 verify_token_error={
     'en': 'Token is not valid'
 }
+verify_token_success={
+    'en': 'Token is valid'
+}
