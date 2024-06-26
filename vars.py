@@ -19,5 +19,11 @@ auth_message_account_error={
     'en': f'A strange error occured pls contact {error_contact}'
 }
 auth_code_error={
-    'en': 'Code is not valid'
+    'en': 'Token is not valid'
+}
+auth_code_success={
+    'en': 'send token to your email'
+}
+verify_token_error={
+    'en': 'Token is not valid'
 }

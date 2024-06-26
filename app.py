@@ -1,11 +1,10 @@
-from flask import Flask, redirect, url_for, session, render_template, jsonify, current_app
+from flask import Flask, redirect, url_for, session, render_template, jsonify, current_app,request
 import hashlib
 
 import uuid
 import threading
 import time
-from tempmail import EMail
-from admin import *
+from verify import *
 # Timeout for waiting on mail
 mail_timout = 250
 hash_key= 'test'
@@ -18,94 +17,57 @@ app.secret_key = 'your_secret_key'
 session_data_store = {}
 email_instances = {}
 
+# Create a handler to log errors to a file
+file_handler = logging.FileHandler('error.log')
+file_handler.setLevel(logging.ERROR)
 
-def verify_mail(message):
-    email_addr = message.from_addr
-    if contains_uva_email(email_addr):
-        if not is_email_in_file(email_addr, hash_key, hash_file):
-            hash_code = generate_combined_hash(email_addr, hash_key)
-            append_hash_to_file(hash_code=hash_code, file_path=hash_file)
-            return True
-        else:
-            print(f'email is already registered')
-            #TODO add error case
-    else:
-        print(f'email address: {email_addr} is not from the accepted institutions')
-    #TODO add error case
-    return False
+# Create a formatter and attach it to the handler
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
 
-# Function to simulate a long-running task
-def my_function(app, session_id):
-    email_instance = email_instances.get(session_id)
-    message_body = "Timeout reached"
-    if email_instance:
-        try:
-            msg = email_instance.wait_for_message(timeout=mail_timout) 
-            verification_successful = verify_mail(msg)  
-        except TimeoutError:
-            verification_successful = False
-            message_body = "Timeout reached"
+# Add the handler to the logger
+logger.addHandler(file_handler)
 
-        with app.app_context():
-            if session_id in session_data_store:
-                session_data_store[session_id]['message_body'] = message_body
-                session_data_store[session_id]['verified'] = verification_successful
-                print(f"Updated session_data_store[{session_id}]['message_body'] to: {message_body}")
-                print(f"Verification result for session_id {session_id}: {verification_successful}")
-            email_instances.pop(session_id, None)
-            print(f"Removed session id {session_id} from email_instances")
+@app.errorhandler(500)
+def internal_server_error(e):
+    logger.error('Error: %s', e)
+    return 'Error: ' + str(e), 500
 
+# landing page
 @app.route('/')
 def index():
     session_id = str(uuid.uuid4())
-    email_instance = EMail()
-    email_instances[session_id] = email_instance
+
     session_data_store[session_id] = {
-        "email_address": email_instance.address,
+        "email_address": None,
         "object": {"key": "value"},
         "message_body": None,
         "verified": False
     }
     session[session_id] = session_data_store[session_id]  # Store in session for request context
-    print(f"Created session for {session_id} with email: {email_instance.address}")
-    return redirect(url_for('session_page', session_id=session_id))
-
-@app.route('/session/<session_id>')
-def session_page(session_id):
+    print(f"Created session for {session_id} ")
+    return redirect(url_for('verify_page', session_id=session_id))
+# register page
+@app.route('/verify_page/<session_id>')
+def verify_page(session_id):
+    # redicrect user if session does not exist
+    if not session_id in session_data_store:
+        return redirect(url_for('oops', session_id=session_id))
+    
     session_data = session_data_store.get(session_id)
-    email_instance = email_instances.get(session_id)
-    if session_data and email_instance:
-        thread = threading.Thread(target=my_function, args=(app, session_id))
-        thread.start()
-        email_address = session_data["email_address"] if session_data["email_address"] else "no-email@address.com"
-        print(f"Starting thread for session_id: {session_id}")
-        return render_template('index.html', email=email_address, session_id=session_id, obj=session_data["object"], message_body=session_data["message_body"])
-    else:
-        return redirect(url_for('index'))
+    return render_template('verify.html', session_id=session_id)
 
-@app.route('/status/<session_id>')
-def status(session_id):
+# register page
+@app.route('/register/<session_id>/<token>')
+def register_page(session_id,token):
+    # redicrect user if session does not exist
+    if not session_id in session_data_store:
+        return redirect(url_for('oops', session_id=session_id))
     session_data = session_data_store.get(session_id)
-    if session_data:
-        message_body = session_data.get("message_body")
-        verified = session_data.get('verified')
-        print(f"Status check for session_id: {session_id}, message_body: {message_body}, verified:{verified}")
-        if message_body is not None:
-            return jsonify({"status": "finished", "message_body": message_body, "verified":verified})
-        else:
-            return jsonify({"status": "running"})
-    else:
-        return jsonify({"status": "finished"})
+    if validate_token(token):
+        session_data_store['verified'] = True
+    return render_template('register.html')
 
-@app.route('/refresh/<session_id>')
-def refresh(session_id):
-    session_data = session_data_store.get(session_id)
-    email_instance = email_instances.get(session_id)
-    if session_data and email_instance:
-        email_address = session_data["email_address"] if session_data["email_address"] else "no-email@address.com"
-        return render_template('index.html', email=email_address, session_id=session_id, obj=session_data["object"], message_body=session_data["message_body"])
-    else:
-        return redirect(url_for('index'))
 
 @app.route('/success/<session_id>')
 def success(session_id):
@@ -118,6 +80,27 @@ def success(session_id):
 @app.route('/oops/<session_id>')
 def oops(session_id):
     return render_template('oops.html', session_id=session_id)
+
+
+
+@app.route('/submit_email/<session_id>', methods=['POST'])
+def submit_email(session_id):
+    if not session_id in session_data_store:
+        # Handle invalid session_id, e.g., return an error pageemail_address
+        return redirect(url_for('oops', session_id=session_id))
+
+    email_address = request.form.get('email')
+    session_data_store[session_id]['email_address'] = email_address
+    # validate email
+    if check_email(email_address):
+        #check if email aready exists and if not send email
+        if auth_email(email_address):
+            return jsonify({'message': 'Form submitted successfully'})
+
+    return redirect(url_for('verify_page', session_id=session_id, message="Email wrong"))
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

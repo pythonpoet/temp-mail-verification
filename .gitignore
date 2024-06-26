@@ -1,0 +1,8 @@
+keys.py
+bin/
+lib/
+lib64
+error.log
+pyvenv.cfg
+yuva
+yuva.txt
