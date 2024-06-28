@@ -11,7 +11,6 @@ class Database:
         self.cursor = None
         self.db_type = db_type
 
-    
         if db_type == "sqlite":
             self.conn = sqlite3.connect(db_name, check_same_thread=False)
         elif db_type == "postgres":

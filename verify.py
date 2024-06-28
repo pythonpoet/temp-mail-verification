@@ -16,7 +16,7 @@ import keys
 
 
 #connect to db
-db = database.Database(db_type='postgres',db_name=keys.DB_NAME,db_host=keys.DB_HOST,db_user=keys.DB_USERNAME, db_password=keys.DB_PASSWORD)
+db = database.Database(db_type=keys.DB_TYPE,db_name=keys.DB_NAME,db_host=keys.DB_HOST,db_user=keys.DB_USERNAME, db_password=keys.DB_PASSWORD)
 
 
 # Set up the logger

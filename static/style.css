@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+}
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.title span {
+    font-size: 18px;
+}
+.signup-info {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+form {
+    margin-bottom: 40px;
+}
+.email-input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.submit-button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.about-us {
+    font-size: 14px;
+    margin-top: 40px;
+}
+@media only screen and (max-width: 600px) {
+    .email-input {
+        width: 80%;
+    }
+}
