@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: Arial, sans-serif;
     background-color: #fff;
@@ -10,34 +11,40 @@ body {
     text-align: center;
 }
 .title {
-    font-size: 24px;
-    margin-bottom: 20px;
+    margin-top: 10%;
+    font-size: 400%; 
 }
-.title span {
-    font-size: 18px;
+.subtitle {
+    font-size: 110%;
+    margin-bottom: 5%; 
 }
 .signup-info {
     font-size: 16px;
     margin-bottom: 20px;
 }
 form {
+    display: block;
     margin-bottom: 40px;
+    text-align: center;
 }
 .email-input {
+    display: block;
     width: 50%;
     padding: 10px;
-    margin-bottom: 20px;
+    margin: 20px auto; 
     font-size: 18px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 .submit-button {
+    display: block;
     background-color: #000;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 20px auto; /
 }
 .about-us {
     font-size: 14px;
@@ -48,3 +55,18 @@ form {
         width: 80%;
     }
 }
+
+.flash {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .flash.error {
+    background-color: #ffa7ae;
+    color: #a02a36;
+  }
+  
+  .flash.success {
+    background-color: #96faad;
+    color: #1c7530;
+  }

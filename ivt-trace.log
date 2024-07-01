@@ -1,0 +1,341 @@
+[July 01, 2024 16:33:31] [INFO | app] some logging info
+[July 01, 2024 16:33:31] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 16:33:31] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 16:34:05] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:34:05] "[32mGET /verify_page/c9b081ea-3a09-4d1b-8f63-721dbf2ce601 HTTP/1.1[0m" 302 -
+[July 01, 2024 16:34:05] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:34:05] "GET /oops/c9b081ea-3a09-4d1b-8f63-721dbf2ce601 HTTP/1.1" 200 -
+[July 01, 2024 16:34:08] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:34:08] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 16:34:08] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:34:08] "GET /verify_page/2e58a2da-8cc4-474c-a555-6f4f9db8d9a8 HTTP/1.1" 200 -
+[July 01, 2024 16:34:08] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:34:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 16:35:21] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:35:21] "GET /verify_page/2e58a2da-8cc4-474c-a555-6f4f9db8d9a8 HTTP/1.1" 200 -
+[July 01, 2024 16:35:21] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:35:21] "GET /static/style.css HTTP/1.1" 200 -
+[July 01, 2024 16:53:04] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/app.py', reloading
+[July 01, 2024 16:54:22] [INFO | app] some logging info
+[July 01, 2024 16:54:22] [INFO | _internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[July 01, 2024 16:54:22] [INFO | _internal] [33mPress CTRL+C to quit[0m
+[July 01, 2024 16:54:22] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 16:54:23] [INFO | app] some logging info
+[July 01, 2024 16:54:23] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 16:54:23] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 16:54:34] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:54:34] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 16:54:34] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:54:34] "GET /verify_page/9ba6b357-3298-4dda-b488-fa27d34aff88 HTTP/1.1" 200 -
+[July 01, 2024 16:54:35] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:54:35] "GET /static/style.css HTTP/1.1" 200 -
+[July 01, 2024 16:54:54] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/app.py', reloading
+[July 01, 2024 16:54:54] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 16:57:00] [INFO | app] some logging info
+[July 01, 2024 16:57:00] [INFO | _internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[July 01, 2024 16:57:00] [INFO | _internal] [33mPress CTRL+C to quit[0m
+[July 01, 2024 16:57:00] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 16:57:01] [INFO | app] some logging info
+[July 01, 2024 16:57:01] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 16:57:01] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 16:57:06] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:57:06] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 16:57:06] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:57:06] "GET /verify_page/03cc515a-0ddb-4459-93e8-5713fd4bd444 HTTP/1.1" 200 -
+[July 01, 2024 16:57:07] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:57:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 16:57:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:57:25] "[35m[1mPOST /submit_email/03cc515a-0ddb-4459-93e8-5713fd4bd444 HTTP/1.1[0m" 500 -
+[July 01, 2024 16:57:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:57:25] "GET /submit_email/03cc515a-0ddb-4459-93e8-5713fd4bd444?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[July 01, 2024 16:57:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:57:25] "GET /submit_email/03cc515a-0ddb-4459-93e8-5713fd4bd444?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[July 01, 2024 16:57:26] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:57:26] "GET /submit_email/03cc515a-0ddb-4459-93e8-5713fd4bd444?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[July 01, 2024 16:59:23] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:59:23] "GET /verify_page/03cc515a-0ddb-4459-93e8-5713fd4bd444 HTTP/1.1" 200 -
+[July 01, 2024 16:59:23] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 16:59:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:09:05] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:09:05] "GET /verify_page/03cc515a-0ddb-4459-93e8-5713fd4bd444 HTTP/1.1" 200 -
+[July 01, 2024 17:09:05] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:09:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:10:25] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/app.py', reloading
+[July 01, 2024 17:10:25] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:10:26] [INFO | app] some logging info
+[July 01, 2024 17:10:26] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:10:26] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:11:10] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/app.py', reloading
+[July 01, 2024 17:11:11] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:11:11] [INFO | app] some logging info
+[July 01, 2024 17:11:11] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:11:11] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:12:00] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/app.py', reloading
+[July 01, 2024 17:12:01] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:12:01] [INFO | app] some logging info
+[July 01, 2024 17:12:01] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:12:01] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:12:11] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/app.py', reloading
+[July 01, 2024 17:12:11] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:12:11] [INFO | app] some logging info
+[July 01, 2024 17:12:11] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:12:11] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:12:14] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:12:14] "[32mGET /verify_page/03cc515a-0ddb-4459-93e8-5713fd4bd444 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:12:14] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:12:14] "GET /oops/03cc515a-0ddb-4459-93e8-5713fd4bd444 HTTP/1.1" 200 -
+[July 01, 2024 17:12:18] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:12:18] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:12:18] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:12:18] "GET /verify_page/3a6c6365-d0f1-40a5-a81c-ce1c357bc2f8 HTTP/1.1" 200 -
+[July 01, 2024 17:12:18] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:12:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:12:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:12:25] "[35m[1mPOST /submit_email/3a6c6365-d0f1-40a5-a81c-ce1c357bc2f8 HTTP/1.1[0m" 500 -
+[July 01, 2024 17:12:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:12:25] "GET /submit_email/3a6c6365-d0f1-40a5-a81c-ce1c357bc2f8?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[July 01, 2024 17:12:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:12:25] "GET /submit_email/3a6c6365-d0f1-40a5-a81c-ce1c357bc2f8?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[July 01, 2024 17:12:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:12:25] "GET /submit_email/3a6c6365-d0f1-40a5-a81c-ce1c357bc2f8?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[July 01, 2024 17:13:16] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:13:16] "GET /verify_page/3a6c6365-d0f1-40a5-a81c-ce1c357bc2f8 HTTP/1.1" 200 -
+[July 01, 2024 17:13:16] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:13:16] "GET /static/style.css HTTP/1.1" 200 -
+[July 01, 2024 17:13:22] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/verify.py', reloading
+[July 01, 2024 17:13:23] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:13:58] [INFO | app] some logging info
+[July 01, 2024 17:13:58] [INFO | _internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[July 01, 2024 17:13:58] [INFO | _internal] [33mPress CTRL+C to quit[0m
+[July 01, 2024 17:13:58] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:13:58] [INFO | app] some logging info
+[July 01, 2024 17:13:58] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:13:58] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:14:08] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:14:08] "[32mPOST /submit_email/3a6c6365-d0f1-40a5-a81c-ce1c357bc2f8 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:14:08] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:14:08] "GET /oops/3a6c6365-d0f1-40a5-a81c-ce1c357bc2f8 HTTP/1.1" 200 -
+[July 01, 2024 17:14:12] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:14:12] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:14:12] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:14:12] "GET /verify_page/5539d1d8-bf21-41af-ae69-680b69122151 HTTP/1.1" 200 -
+[July 01, 2024 17:14:13] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:14:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:14:20] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:14:20] "[32mPOST /submit_email/5539d1d8-bf21-41af-ae69-680b69122151 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:14:21] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:14:21] "GET /verify_page/5539d1d8-bf21-41af-ae69-680b69122151?message=Email+wrong HTTP/1.1" 200 -
+[July 01, 2024 17:14:21] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:14:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:14:21] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:14:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[July 01, 2024 17:15:41] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/verify.py', reloading
+[July 01, 2024 17:15:41] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:15:42] [INFO | app] some logging info
+[July 01, 2024 17:15:42] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:15:42] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:16:25] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/verify.py', reloading
+[July 01, 2024 17:16:25] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:16:26] [INFO | app] some logging info
+[July 01, 2024 17:16:26] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:16:26] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:16:30] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:16:30] "[32mGET /verify_page/5539d1d8-bf21-41af-ae69-680b69122151?message=Email+wrong HTTP/1.1[0m" 302 -
+[July 01, 2024 17:16:30] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:16:30] "GET /oops/5539d1d8-bf21-41af-ae69-680b69122151 HTTP/1.1" 200 -
+[July 01, 2024 17:16:30] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:16:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[July 01, 2024 17:16:33] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:16:33] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:16:33] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:16:33] "GET /verify_page/8ce3e680-2701-4021-9b8a-0eee134704f3 HTTP/1.1" 200 -
+[July 01, 2024 17:16:33] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:16:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:16:38] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:16:38] "[32mPOST /submit_email/8ce3e680-2701-4021-9b8a-0eee134704f3 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:16:38] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:16:38] "GET /verify_page/8ce3e680-2701-4021-9b8a-0eee134704f3?message=Email+wrong HTTP/1.1" 200 -
+[July 01, 2024 17:16:38] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:16:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:17:02] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/verify.py', reloading
+[July 01, 2024 17:17:02] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:17:03] [INFO | app] some logging info
+[July 01, 2024 17:17:03] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:17:03] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:17:06] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:06] "[32mGET /verify_page/8ce3e680-2701-4021-9b8a-0eee134704f3?message=Email+wrong HTTP/1.1[0m" 302 -
+[July 01, 2024 17:17:06] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:06] "GET /oops/8ce3e680-2701-4021-9b8a-0eee134704f3 HTTP/1.1" 200 -
+[July 01, 2024 17:17:11] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:11] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:17:11] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:11] "GET /verify_page/50a64f3f-2b50-4193-b4f7-9fc7e6222eec HTTP/1.1" 200 -
+[July 01, 2024 17:17:11] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:17:15] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:15] "[35m[1mPOST /submit_email/50a64f3f-2b50-4193-b4f7-9fc7e6222eec HTTP/1.1[0m" 500 -
+[July 01, 2024 17:17:16] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:16] "GET /submit_email/50a64f3f-2b50-4193-b4f7-9fc7e6222eec?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[July 01, 2024 17:17:16] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:16] "GET /submit_email/50a64f3f-2b50-4193-b4f7-9fc7e6222eec?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[July 01, 2024 17:17:16] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:16] "GET /submit_email/50a64f3f-2b50-4193-b4f7-9fc7e6222eec?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[July 01, 2024 17:17:58] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:58] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:17:58] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:58] "GET /verify_page/838cda6a-5c93-4419-8edc-2a3f07b56d64 HTTP/1.1" 200 -
+[July 01, 2024 17:17:58] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:17:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:18:16] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/verify.py', reloading
+[July 01, 2024 17:18:16] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:18:17] [INFO | app] some logging info
+[July 01, 2024 17:18:17] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:18:17] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:18:23] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:18:23] "[32mPOST /submit_email/838cda6a-5c93-4419-8edc-2a3f07b56d64 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:18:23] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:18:23] "GET /oops/838cda6a-5c93-4419-8edc-2a3f07b56d64 HTTP/1.1" 200 -
+[July 01, 2024 17:18:41] [INFO | app] some logging info
+[July 01, 2024 17:18:41] [INFO | _internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[July 01, 2024 17:18:41] [INFO | _internal] [33mPress CTRL+C to quit[0m
+[July 01, 2024 17:18:41] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:18:42] [INFO | app] some logging info
+[July 01, 2024 17:18:42] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:18:42] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:18:46] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:18:46] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:18:46] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:18:46] "GET /verify_page/6679fb9e-f11c-4a1f-9410-1e98bf534dbb HTTP/1.1" 200 -
+[July 01, 2024 17:18:46] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:18:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:18:52] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:18:52] "[32mPOST /submit_email/6679fb9e-f11c-4a1f-9410-1e98bf534dbb HTTP/1.1[0m" 302 -
+[July 01, 2024 17:18:53] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:18:53] "GET /verify_page/6679fb9e-f11c-4a1f-9410-1e98bf534dbb?message=Email+wrong HTTP/1.1" 200 -
+[July 01, 2024 17:18:53] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:18:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:19:28] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/verify.py', reloading
+[July 01, 2024 17:19:28] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:19:29] [INFO | app] some logging info
+[July 01, 2024 17:19:29] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:19:29] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:19:31] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:19:31] "[32mGET /verify_page/6679fb9e-f11c-4a1f-9410-1e98bf534dbb?message=Email+wrong HTTP/1.1[0m" 302 -
+[July 01, 2024 17:19:31] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:19:31] "GET /oops/6679fb9e-f11c-4a1f-9410-1e98bf534dbb HTTP/1.1" 200 -
+[July 01, 2024 17:19:35] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:19:35] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:19:35] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:19:35] "GET /verify_page/54787973-ccca-411b-b97e-69005d692174 HTTP/1.1" 200 -
+[July 01, 2024 17:19:35] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:19:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:19:39] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:19:39] "[32mPOST /submit_email/54787973-ccca-411b-b97e-69005d692174 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:19:39] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:19:39] "GET /verify_page/54787973-ccca-411b-b97e-69005d692174?message=Email+wrong HTTP/1.1" 200 -
+[July 01, 2024 17:19:40] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:19:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:23:12] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:23:12] "GET /verify_page/54787973-ccca-411b-b97e-69005d692174 HTTP/1.1" 200 -
+[July 01, 2024 17:23:12] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:23:12] "GET /static/style.css HTTP/1.1" 200 -
+[July 01, 2024 17:23:15] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/verify.py', reloading
+[July 01, 2024 17:23:15] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:23:16] [INFO | app] some logging info
+[July 01, 2024 17:23:16] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:23:16] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:24:44] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/verify.py', reloading
+[July 01, 2024 17:24:44] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:24:45] [INFO | app] some logging info
+[July 01, 2024 17:24:45] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:24:45] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:25:51] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/verify.py', reloading
+[July 01, 2024 17:25:51] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:25:52] [INFO | app] some logging info
+[July 01, 2024 17:25:52] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:25:52] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:26:06] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/verify.py', reloading
+[July 01, 2024 17:26:06] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:26:06] [INFO | app] some logging info
+[July 01, 2024 17:26:06] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:26:06] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:29:35] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/app.py', reloading
+[July 01, 2024 17:29:35] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:29:36] [INFO | app] some logging info
+[July 01, 2024 17:29:36] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:29:36] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:29:44] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:29:44] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:29:44] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:29:44] "GET /verify_page/56580825-cbda-4b37-a7b7-57453dfe267e HTTP/1.1" 200 -
+[July 01, 2024 17:29:44] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:29:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:30:05] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:30:05] "[35m[1mPOST /submit_email/56580825-cbda-4b37-a7b7-57453dfe267e HTTP/1.1[0m" 500 -
+[July 01, 2024 17:30:05] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:30:05] "GET /submit_email/56580825-cbda-4b37-a7b7-57453dfe267e?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[July 01, 2024 17:30:05] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:30:05] "GET /submit_email/56580825-cbda-4b37-a7b7-57453dfe267e?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[July 01, 2024 17:30:05] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:30:05] "GET /submit_email/56580825-cbda-4b37-a7b7-57453dfe267e?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[July 01, 2024 17:30:28] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:30:28] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:30:28] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:30:28] "GET /verify_page/eebb9087-27bb-446c-8572-b51575a4f515 HTTP/1.1" 200 -
+[July 01, 2024 17:30:29] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:30:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:30:48] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:30:48] "[35m[1mPOST /submit_email/eebb9087-27bb-446c-8572-b51575a4f515 HTTP/1.1[0m" 500 -
+[July 01, 2024 17:30:48] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:30:48] "GET /submit_email/eebb9087-27bb-446c-8572-b51575a4f515?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[July 01, 2024 17:30:48] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:30:48] "GET /submit_email/eebb9087-27bb-446c-8572-b51575a4f515?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[July 01, 2024 17:30:49] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:30:49] "GET /submit_email/eebb9087-27bb-446c-8572-b51575a4f515?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[July 01, 2024 17:32:19] [INFO | app] some logging info
+[July 01, 2024 17:32:19] [INFO | _internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[July 01, 2024 17:32:19] [INFO | _internal] [33mPress CTRL+C to quit[0m
+[July 01, 2024 17:32:19] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:32:19] [INFO | app] some logging info
+[July 01, 2024 17:32:19] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:32:19] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:32:31] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:32:31] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:32:31] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:32:31] "GET /verify_page/1beb3a4b-a264-441e-bc5a-04f96e67705e HTTP/1.1" 200 -
+[July 01, 2024 17:32:31] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:32:31] "GET /static/style.css HTTP/1.1" 200 -
+[July 01, 2024 17:32:32] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:32:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[July 01, 2024 17:32:37] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:32:37] "[35m[1mPOST /submit_email/1beb3a4b-a264-441e-bc5a-04f96e67705e HTTP/1.1[0m" 500 -
+[July 01, 2024 17:32:37] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:32:37] "GET /submit_email/1beb3a4b-a264-441e-bc5a-04f96e67705e?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[July 01, 2024 17:32:37] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:32:37] "GET /submit_email/1beb3a4b-a264-441e-bc5a-04f96e67705e?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[July 01, 2024 17:32:38] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:32:38] "GET /submit_email/1beb3a4b-a264-441e-bc5a-04f96e67705e?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[July 01, 2024 17:35:15] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/verify.py', reloading
+[July 01, 2024 17:35:15] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:35:16] [INFO | app] some logging info
+[July 01, 2024 17:35:16] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:35:16] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:35:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:35:25] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:35:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:35:25] "GET /verify_page/8667e644-e6ff-4932-9dd5-32001fe84597 HTTP/1.1" 200 -
+[July 01, 2024 17:35:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:35:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:35:33] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:35:33] "[32mPOST /submit_email/8667e644-e6ff-4932-9dd5-32001fe84597 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:35:33] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:35:33] "GET /verify_page/8667e644-e6ff-4932-9dd5-32001fe84597?message=Email+wrong HTTP/1.1" 200 -
+[July 01, 2024 17:35:33] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:35:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:37:11] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:37:11] "[35m[1mPOST /submit_email/8667e644-e6ff-4932-9dd5-32001fe84597 HTTP/1.1[0m" 500 -
+[July 01, 2024 17:37:11] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:37:11] "GET /submit_email/8667e644-e6ff-4932-9dd5-32001fe84597?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[July 01, 2024 17:37:11] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:37:11] "GET /submit_email/8667e644-e6ff-4932-9dd5-32001fe84597?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[July 01, 2024 17:37:11] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:37:11] "GET /submit_email/8667e644-e6ff-4932-9dd5-32001fe84597?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[July 01, 2024 17:38:52] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/email_handler.py', reloading
+[July 01, 2024 17:38:52] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:38:53] [INFO | app] some logging info
+[July 01, 2024 17:38:53] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:38:53] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:38:59] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:38:59] "[32mPOST /submit_email/8667e644-e6ff-4932-9dd5-32001fe84597 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:38:59] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:38:59] "GET /oops/8667e644-e6ff-4932-9dd5-32001fe84597 HTTP/1.1" 200 -
+[July 01, 2024 17:39:02] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:02] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:39:02] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:02] "GET /verify_page/cb518355-c3c3-4415-846d-7faf256e6cb1 HTTP/1.1" 200 -
+[July 01, 2024 17:39:02] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:39:14] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:14] "[35m[1mPOST /submit_email/cb518355-c3c3-4415-846d-7faf256e6cb1 HTTP/1.1[0m" 500 -
+[July 01, 2024 17:39:15] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:15] "GET /submit_email/cb518355-c3c3-4415-846d-7faf256e6cb1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[July 01, 2024 17:39:15] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:15] "GET /submit_email/cb518355-c3c3-4415-846d-7faf256e6cb1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[July 01, 2024 17:39:15] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:15] "GET /submit_email/cb518355-c3c3-4415-846d-7faf256e6cb1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[July 01, 2024 17:39:35] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/email_handler.py', reloading
+[July 01, 2024 17:39:35] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:39:36] [INFO | app] some logging info
+[July 01, 2024 17:39:36] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:39:36] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:39:41] [INFO | app] some logging info
+[July 01, 2024 17:39:41] [INFO | _internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[July 01, 2024 17:39:41] [INFO | _internal] [33mPress CTRL+C to quit[0m
+[July 01, 2024 17:39:41] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:39:42] [INFO | app] some logging info
+[July 01, 2024 17:39:42] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:39:42] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:39:49] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:49] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:39:49] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:49] "GET /verify_page/5f572be3-84db-4435-9ff8-5eee947e32f9 HTTP/1.1" 200 -
+[July 01, 2024 17:39:49] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:39:57] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:57] "[32mPOST /submit_email/5f572be3-84db-4435-9ff8-5eee947e32f9 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:39:57] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:57] "GET /verify_page/5f572be3-84db-4435-9ff8-5eee947e32f9?message=Email+wrong HTTP/1.1" 200 -
+[July 01, 2024 17:39:57] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:39:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:40:06] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:06] "[35m[1mPOST /submit_email/5f572be3-84db-4435-9ff8-5eee947e32f9 HTTP/1.1[0m" 500 -
+[July 01, 2024 17:40:06] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:06] "GET /submit_email/5f572be3-84db-4435-9ff8-5eee947e32f9?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[July 01, 2024 17:40:06] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:06] "GET /submit_email/5f572be3-84db-4435-9ff8-5eee947e32f9?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[July 01, 2024 17:40:07] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:07] "GET /submit_email/5f572be3-84db-4435-9ff8-5eee947e32f9?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[July 01, 2024 17:40:28] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/email_handler.py', reloading
+[July 01, 2024 17:40:28] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:40:29] [INFO | app] some logging info
+[July 01, 2024 17:40:29] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:40:29] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:40:44] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:44] "[32mPOST /submit_email/5f572be3-84db-4435-9ff8-5eee947e32f9 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:40:44] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:44] "GET /oops/5f572be3-84db-4435-9ff8-5eee947e32f9 HTTP/1.1" 200 -
+[July 01, 2024 17:40:47] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:47] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:40:47] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:47] "GET /verify_page/3813a360-eec3-4068-acda-b166dc1b51a5 HTTP/1.1" 200 -
+[July 01, 2024 17:40:47] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:40:54] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:54] "[32mPOST /submit_email/3813a360-eec3-4068-acda-b166dc1b51a5 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:40:55] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:55] "GET /verify_page/3813a360-eec3-4068-acda-b166dc1b51a5?message=sending+email HTTP/1.1" 200 -
+[July 01, 2024 17:40:55] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:40:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:43:14] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:43:14] "GET /verify_page/3813a360-eec3-4068-acda-b166dc1b51a5 HTTP/1.1" 200 -
+[July 01, 2024 17:43:14] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:43:14] "GET /static/style.css HTTP/1.1" 200 -
+[July 01, 2024 17:46:24] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/app.py', reloading
+[July 01, 2024 17:46:24] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:46:25] [INFO | app] some logging info
+[July 01, 2024 17:46:25] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:46:25] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:47:00] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/app.py', reloading
+[July 01, 2024 17:47:00] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:47:01] [INFO | app] some logging info
+[July 01, 2024 17:47:01] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:47:01] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:47:04] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:47:04] "[32mGET /verify_page/3813a360-eec3-4068-acda-b166dc1b51a5?message=sending+email HTTP/1.1[0m" 302 -
+[July 01, 2024 17:47:04] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:47:04] "GET /oops/3813a360-eec3-4068-acda-b166dc1b51a5 HTTP/1.1" 200 -
+[July 01, 2024 17:47:04] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:47:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[July 01, 2024 17:47:24] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:47:24] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:47:24] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:47:24] "GET /verify_page/d285865d-a2be-424f-9400-de21b10e8680 HTTP/1.1" 200 -
+[July 01, 2024 17:47:24] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:47:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:48:14] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:48:14] "GET /verify_page/d285865d-a2be-424f-9400-de21b10e8680 HTTP/1.1" 200 -
+[July 01, 2024 17:48:14] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:48:14] "GET /static/style.css HTTP/1.1" 200 -
+[July 01, 2024 17:48:28] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/config.py', reloading
+[July 01, 2024 17:48:28] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:48:29] [INFO | app] some logging info
+[July 01, 2024 17:48:29] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:48:29] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 17:50:21] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:50:21] "[32mPOST /submit_email/d285865d-a2be-424f-9400-de21b10e8680 HTTP/1.1[0m" 302 -
+[July 01, 2024 17:50:21] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:50:21] "GET /oops/d285865d-a2be-424f-9400-de21b10e8680 HTTP/1.1" 200 -
+[July 01, 2024 17:50:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:50:25] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 17:50:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:50:25] "GET /verify_page/99f5916d-ff7b-46e5-a2ae-ed270c975aab HTTP/1.1" 200 -
+[July 01, 2024 17:50:25] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:50:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:50:30] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:50:30] "[32mPOST /submit_email/99f5916d-ff7b-46e5-a2ae-ed270c975aab HTTP/1.1[0m" 302 -
+[July 01, 2024 17:50:30] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:50:30] "GET /verify_page/99f5916d-ff7b-46e5-a2ae-ed270c975aab?message=sending+email HTTP/1.1" 200 -
+[July 01, 2024 17:50:30] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:50:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[July 01, 2024 17:53:14] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:53:14] "GET /verify_page/99f5916d-ff7b-46e5-a2ae-ed270c975aab HTTP/1.1" 200 -
+[July 01, 2024 17:53:14] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 17:53:14] "GET /static/style.css HTTP/1.1" 200 -
+[July 01, 2024 17:54:11] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/app.py', reloading
+[July 01, 2024 17:54:11] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 17:54:12] [INFO | app] some logging info
+[July 01, 2024 17:54:12] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 17:54:12] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 18:00:36] [INFO | _internal]  * Detected change in '/home/david/Nextcloud/Documents/projects/temp-mail/vars.py', reloading
+[July 01, 2024 18:00:36] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 18:04:50] [INFO | app] some logging info
+[July 01, 2024 18:04:50] [INFO | _internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[July 01, 2024 18:04:50] [INFO | _internal] [33mPress CTRL+C to quit[0m
+[July 01, 2024 18:04:50] [INFO | _internal]  * Restarting with stat
+[July 01, 2024 18:04:51] [INFO | app] some logging info
+[July 01, 2024 18:04:51] [WARNING | _internal]  * Debugger is active!
+[July 01, 2024 18:04:51] [INFO | _internal]  * Debugger PIN: 480-274-102
+[July 01, 2024 18:04:55] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 18:04:55] "[32mGET / HTTP/1.1[0m" 302 -
+[July 01, 2024 18:04:55] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 18:04:55] "GET /verify_page/5bac32c0-4f2b-4822-ada9-b5ed5372051c HTTP/1.1" 200 -
+[July 01, 2024 18:04:55] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 18:04:55] "GET /static/style.css HTTP/1.1" 200 -
+[July 01, 2024 18:05:01] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 18:05:01] "[32mPOST /submit_email/5bac32c0-4f2b-4822-ada9-b5ed5372051c HTTP/1.1[0m" 302 -
+[July 01, 2024 18:05:01] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 18:05:01] "GET /verify_page/5bac32c0-4f2b-4822-ada9-b5ed5372051c?message=sending+email HTTP/1.1" 200 -
+[July 01, 2024 18:05:01] [INFO | _internal] 127.0.0.1 - - [01/Jul/2024 18:05:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

@@ -13,7 +13,7 @@ def send_mail(receiver_email, msg):
     server = smtplib.SMTP(config.SMTP_SERVER, config.SMTP_PORT)
 
     server.starttls()  # Secure the connection
-    server.login(keys.sender_email, keys.email_password)
+    server.login(keys.SENDER_EMAIL, keys.EMAIL_PASSWORD)
 
     # Send the email and quit
     server.send_message(msg)
@@ -22,7 +22,7 @@ def send_mail(receiver_email, msg):
 def send_auth_token(receiver_email, session_id,token):
     # Create the email message
     subject = "Your yuva registration token"
-    registration_link = f"{keys.server_name}/register/{session_id}/{token}"
+    registration_link = f"{config.SYNAPSE_URL}/register/{session_id}/{token}"
 
     # Create the HTML content
     html_content = f"""
@@ -36,7 +36,7 @@ def send_auth_token(receiver_email, session_id,token):
         </html>
     """
     msg = MIMEMultipart()
-    msg['From'] = keys.sender_email
+    msg['From'] = keys.SENDER_EMAIL
     msg['To'] = receiver_email
     msg['Subject'] = subject
     msg['Date'] = email.utils.formatdate(localtime=True)

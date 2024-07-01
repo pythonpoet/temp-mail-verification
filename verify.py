@@ -12,7 +12,8 @@ import asyncio
 import time
 import threading
 import keys
-
+import config
+from flask import flash
 
 
 #connect to db
@@ -31,13 +32,21 @@ handler.setFormatter(formatter)  # set the formatter to the handler
 
 logger.addHandler(handler)  # add the handler to the logger
 
+def log_error(msg):
+    flash(msg,category='error')
+    logger.error(msg)
+
+def log_success(msg):
+    flash(msg, category='success')
+    logger.info(msg)
+
 def is_username_available(username):
     """
     Checks whether a username is available on a Matrix server.
     Returns True if available, False if not available, raises an exception for other errors.
     """
     # Define the API endpoint URL
-    api_url = f"{synapse_url}/_matrix/client/r0/register/available?username={username}"
+    api_url = f"{config.SYNAPSE_URL}/_matrix/client/r0/register/available?username={username}"
 
     # Send the GET request to the API endpoint
     response = requests.get(api_url)
@@ -65,7 +74,7 @@ def get_domain(address):
 def check_if_domain_allowed(address):
     domain = get_domain(address)
     print(domain)
-    return domain in allowed_domains
+    return domain in config.ALLOWED_EMAIL_DOMAINS
 
 def get_localpart(address):
     localpart = address[ : address.index('@') ]
@@ -83,13 +92,13 @@ def contains_double_registration(email):
 
 def check_email(email):
     if not check_if_domain_allowed(email):
-        logger.error(vars.auth_message_no_uva_mail.get(vars.language))
+        log_error(vars.auth_message_no_uva_mail.get(vars.language))
         return False
     if contains_double_registration(email):
-        logger.error(vars.auth_message_mail_dubble_registered.get(vars.language))
+        log_error(vars.auth_message_mail_dubble_registered.get(vars.language))
         return False
     if check_if_valid_character(email):
-        logger.error(vars.aut_message_mail_format.get(vars.language))
+        log_error(vars.aut_message_mail_format.get(vars.language))
         return False
     return True
 def create_matrix_accout(username, displayname, password, is_admin=False):
@@ -131,7 +140,7 @@ def create_matrix_accout(username, displayname, password, is_admin=False):
 
 def delete_token_async(token):
     #delete interval
-    asyncio.sleep(TOKEN_DELETE_TIME)
+    asyncio.sleep(config.TOKEN_DELETE_TIME)
     db.delete_token(token)
 
 def send_token(email, session_id):
@@ -147,7 +156,7 @@ def send_token(email, session_id):
 
     threading.Thread(target=delete_token_async, args=(token,)).start()
     # send emal via smtp
-    print("send_mail")
+
     send_auth_token(email, session_id, token)
 
 def auth_email(email):
@@ -155,26 +164,26 @@ def auth_email(email):
     if not db.user_id_already_exists(hash_code):
         send_token(email)
     else:
-        logger.error(vars.auth_message_mail_dubble_registered.get(vars.language))
+        log_error(vars.auth_message_mail_dubble_registered.get(vars.language))
 def validate_token(token):
     # check if token exists and delete it
     if db.check_token_exists(token):
         db.delete_token(token)
         return True
     else:
-        logger.error(vars.verify_token_error.get(vars.language))
+        log_error(vars.verify_token_error.get(vars.language))
         return False
 
 def test_credentials(code,email, username,displayname, password):
 
     if is_username_available(username):
         if create_matrix_accout(username=username,displayname=displayname,password=password):
-            logger.info(vars.aut_message_account_created.get(vars.language))
+            log_success(vars.aut_message_account_created.get(vars.language))
             #register email
             hash_code = get_hash(email)
             db.insert_userID(hash_code)
         else:
-            logger.error(vars.auth_message_account_error.get(vars.language))
+            log_error(vars.auth_message_account_error.get(vars.language))
     else: 
-        logger.error(vars.aut_message_name_already_taken.get(vars.language))
+        log_error(vars.aut_message_name_already_taken.get(vars.language))
 

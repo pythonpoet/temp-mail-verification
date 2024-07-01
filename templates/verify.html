@@ -9,14 +9,20 @@
 <body>
     <body>
 
-    <h1 class="title">Join yuva on [matrix],
-        <span> its secure, open source, decentralised technology to reclaim the digital space.</span>
-      </h1>
-    <p class="signup-info">Register now by requesting a sighnup link through your uva e-mail</p>
+    <h1 class="title">Join yuva on [matrix],<br></h1>
+    <h1 class="subtitle"> its secure, open source, decentralised technology to reclaim the digital space.</h1>
+    <section>
+        <header>
+          {% block header %}{% endblock header %}
+          {% for category, message in get_flashed_messages(with_categories=true) %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </header>
+      </section>
+    <p class="signup-info">Register now by requesting a sign-up link through your uva e-mail</p>
     <form action="/submit_email/{{ session_id }}" method="post">
-  
         <input type="email" id="email" name="email" class="email-input" placeholder="Enter your uva email address">
-        <button type="submit">Register</button>
+        <button type="submit" class="submit-button">Register</button>
     </form>
     <p class="about-us">Why move to matrix? This is a student movement, we want a communication platform for the students.
         We made sure to make this as anonymous as possible. 

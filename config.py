@@ -1,5 +1,6 @@
 # flask server name
 FLASK_SERVER='http://127.0.0.1:5000'
+SUPPORTED_LANG=['en', 'nl']
 
 # matrix
 SYNAPSE_URL='matrix.yuva.fyi'

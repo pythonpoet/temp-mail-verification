@@ -1,3 +1,4 @@
+import config
 language='en'
 error_contact='yuva ICT service desk'
 auth_message_no_uva_mail={
@@ -22,7 +23,7 @@ auth_code_error={
     'en': 'Token is not valid'
 }
 auth_code_success={
-    'en': 'send token to your email'
+    'en': 'Send email with registration link to %s link is valid for ' + str(config.TOKEN_DELETE_TIME / 60) + " min."
 }
 verify_token_error={
     'en': 'Token is not valid'

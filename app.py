@@ -1,4 +1,5 @@
-from flask import Flask, redirect, url_for, session, render_template, jsonify, current_app,request
+from flask import Flask, redirect, url_for, session, render_template, jsonify, current_app,request, flash, Blueprint
+from logging.config import dictConfig
 import hashlib
 
 import uuid
@@ -15,7 +16,33 @@ app.secret_key = keys.FLASK_SECRET_KEY
 # Global dictionaries to store session data and EMail instances
 session_data_store = {}
 email_instances = {}
-
+dictConfig(
+    {
+        "version": 1,
+        "formatters": {
+            "default": {
+                "format": "[%(asctime)s] [%(levelname)s | %(module)s] %(message)s",
+                "datefmt": "%B %d, %Y %H:%M:%S",
+            },
+        },
+        "handlers": {
+            "console": {
+                "class": "logging.StreamHandler",
+                "formatter": "default",
+            },
+            "file": {
+                "class": "logging.FileHandler",
+                "filename": "ivt-trace.log",
+                "formatter": "default",
+            },
+        },
+        "root": {"level": "INFO", "handlers": ["console", "file"]},
+    }
+)
+logger = logging.getLogger(__name__)
+# define the blueprint
+blueprint_xxxx = Blueprint(name="blueprint_xxx", import_name=__name__, url_prefix='/xxxx/yyyy')
+logger.info(msg="some logging info")
 # Create a handler to log errors to a file
 file_handler = logging.FileHandler('error.log')
 file_handler.setLevel(logging.ERROR)
@@ -27,6 +54,7 @@ file_handler.setFormatter(formatter)
 # Add the handler to the logger
 logger.addHandler(file_handler)
 
+
 @app.errorhandler(500)
 def internal_server_error(e):
     logger.error('Error: %s', e)
@@ -35,13 +63,15 @@ def internal_server_error(e):
 # landing page
 @app.route('/')
 def index():
+   
     session_id = str(uuid.uuid4())
 
     session_data_store[session_id] = {
         "email_address": None,
-        "object": {"key": "value"},
         "message_body": None,
-        "verified": False
+        "verified": False,
+        #randomly define language to avoid language bias
+        "language": random.choice(config.SUPPORTED_LANG)
     }
     session[session_id] = session_data_store[session_id]  # Store in session for request context
     print(f"Created session for {session_id} ")
@@ -63,10 +93,11 @@ def register_page(session_id,token):
     if not session_id in session_data_store:
         return redirect(url_for('oops', session_id=session_id))
     session_data = session_data_store.get(session_id)
+    raise Exception("fix this error")
     if True:#validate_token(token):
         session_data_store['verified'] = True
-        logger.info(vars.verify_token_success.get(vars.language))
-        print(vars.verify_token_success.get(vars.language))
+        flash(vars.verify_token_success.get(vars.language),category='success')
+        
     return render_template('register.html',session_id=session_id,token=token)
 
 
@@ -96,6 +127,7 @@ def submit_email(session_id):
     if check_email(email_address):
         #check if email aready exists and if not send email
         send_token(email_address,session_id)
+        flash(vars.auth_code_success.get(vars.language)% email_address, category='success')
         return redirect(url_for('verify_page', session_id=session_id, message="sending email"))
 
     return redirect(url_for('verify_page', session_id=session_id, message="Email wrong"))
