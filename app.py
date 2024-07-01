@@ -13,9 +13,9 @@ import keys
 app = Flask(__name__)
 app.secret_key = keys.FLASK_SECRET_KEY
 
-# Global dictionaries to store session data and EMail instances
+# Global dictionaries to store session data
 session_data_store = {}
-email_instances = {}
+
 dictConfig(
     {
         "version": 1,
@@ -55,92 +55,63 @@ file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
 
-@app.errorhandler(500)
-def internal_server_error(e):
-    logger.error('Error: %s', e)
-    return 'Error: ' + str(e), 500
-
 # landing page
 @app.route('/')
 def index():
-   
-    session_id = str(uuid.uuid4())
-
-    session_data_store[session_id] = {
-        "email_address": None,
-        "message_body": None,
-        "verified": False,
-        #randomly define language to avoid language bias
-        "language": random.choice(config.SUPPORTED_LANG)
-    }
-    session[session_id] = session_data_store[session_id]  # Store in session for request context
-    print(f"Created session for {session_id} ")
-    return redirect(url_for('verify_page', session_id=session_id))
-# register page
-@app.route('/verify_page/<session_id>')
-def verify_page(session_id):
-    # redicrect user if session does not exist
-    if not session_id in session_data_store:
-        return redirect(url_for('oops', session_id=session_id))
-    
-    session_data = session_data_store.get(session_id)
-    return render_template('verify.html', session_id=session_id)
+    if not 'id' in session:
+        session['id'] = str(uuid.uuid4())
+    if not 'email' in session:
+        session['email'] = None
+    if not 'verified' in session:
+        session['verified'] = False
+    if not 'language' in session:
+        # select language randomly to avoid language bias
+        session['language'] = random.choice(config.SUPPORTED_LANG)
+    logger.info(msg=f'Start session with id: {session.get('id')}')
+    return render_template('index.html')
 
 # register page
 @app.route('/register/<session_id>/<token>')
-def register_page(session_id,token):
-    # redicrect user if session does not exist
-    if not session_id in session_data_store:
-        return redirect(url_for('oops', session_id=session_id))
-    session_data = session_data_store.get(session_id)
-    raise Exception("fix this error")
-    if True:#validate_token(token):
-        session_data_store['verified'] = True
-        flash(vars.verify_token_success.get(vars.language),category='success')
-        
-    return render_template('register.html',session_id=session_id,token=token)
+def register_page(session_id, token):
+    logger.info(msg=f'is session id initialised? {"id" in session}')
+    logger.info(msg=f'link session_id: {session_id} cookie session id: {session.get("id")}')
 
+    if not session_id == session.get('id'):
+        return redirect(url_for('oops'))
+    if validate_token(token):
+        session['verified'] = True
+        flash(vars.verify_token_success.get(vars.language),category='success')  
+    return render_template('register.html' ,token=token)
 
-@app.route('/success/<session_id>')
-def success(session_id):
-    session_data = session_data_store.get(session_id)
-    if session_data and session_data.get("verified"):
-        return render_template('success.html', session_id=session_id)
+@app.route('/success')
+def success():
+    if session["verified"]:
+        return render_template('success.html',)
     else:
-        return redirect(url_for('oops', session_id=session_id))
+        return redirect(url_for('oops', ))
 
-@app.route('/oops/<session_id>')
-def oops(session_id):
-    return render_template('oops.html', session_id=session_id)
+@app.route('/oops')
+def oops():
+    return render_template('oops.html')
 
 
-
-@app.route('/submit_email/<session_id>', methods=['POST'])
-def submit_email(session_id):
-    if not session_id in session_data_store:
-        # Handle invalid session_id, e.g., return an error pageemail_address
-        return redirect(url_for('oops', session_id=session_id))
-
-    email_address = request.form.get('email')
-    session_data_store[session_id]['email_address'] = email_address
+@app.route('/submit_email', methods=['POST'])
+def submit_email():
+    email = request.form.get('email')
+    session['email'] = email
     # validate email
-    if check_email(email_address):
+    if check_email(email):
         #check if email aready exists and if not send email
-        send_token(email_address,session_id)
-        flash(vars.auth_code_success.get(vars.language)% email_address, category='success')
-        return redirect(url_for('verify_page', session_id=session_id, message="sending email"))
+        send_token(email,session['id'])
+        flash(vars.auth_code_success.get(vars.language)% email, category='success')
+        return redirect(url_for('index'))
+    return redirect(url_for('index'))
 
-    return redirect(url_for('verify_page', session_id=session_id, message="Email wrong"))
-
-@app.route('/create_account/<session_id>', methods=['POST'])
-def create_account(session_id):
-    if not session_id in session_data_store:
-        # Handle invalid session_id, e.g., return an error pageemail_address
-        return redirect(url_for('oops', session_id=session_id))
-    session_data = session_data_store.get(session_id)
+@app.route('/create_account', methods=['POST'])
+def create_account():
     # check that the session has been verified (token is already deleted)
-    if not session_data_store['verified']: 
-        return redirect(url_for('oops', session_id=session_id))
+    if not session['verified']: 
+        return redirect(url_for('oops'))
     
     username = request.form['username']
     displayname = request.form['displayname']
@@ -148,7 +119,7 @@ def create_account(session_id):
 
     # Call the create_matrix_account function here
     #test_credentials(username, displayname, password)
-    return render_template('success.html', session_id=session_id)
+    return render_template('success.html', )
 
 
 if __name__ == '__main__':

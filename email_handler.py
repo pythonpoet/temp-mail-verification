@@ -22,7 +22,7 @@ def send_mail(receiver_email, msg):
 def send_auth_token(receiver_email, session_id,token):
     # Create the email message
     subject = "Your yuva registration token"
-    registration_link = f"{config.SYNAPSE_URL}/register/{session_id}/{token}"
+    registration_link = f"{config.FLASK_SERVER}/register/{session_id}/{token}"
 
     # Create the HTML content
     html_content = f"""

@@ -3,17 +3,29 @@
   <head>
     <title>Create Matrix Account</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   </head>
+  <body>
 
+    <h1 class="title">Join yuva on [matrix],<br></h1>
+    <h1 class="subtitle"> its secure, open source, decentralised technology to reclaim the digital space.</h1>
+    <section>
+      <header>
+        {% block header %}{% endblock header %}
+        {% for category, message in get_flashed_messages(with_categories=true) %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      </header>
+    </section>
 
-    <form action="/create_account/{{ session_id }}" method="post">
+    <form action="/create_account" method="post">
       <label for="username">Username:</label>
-      <input type="text" id="username" name="username"><br><br>
+      <input type="text" id="username" name="username" class="text-input"><br><br>
       <label for="displayname">Display Name:</label>
-      <input type="text" id="displayname" name="displayname"><br><br>
+      <input type="text" id="displayname" name="displayname" class="text-input"><br><br>
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password"><br><br>
-      <input type="submit" value="Create Account">
+      <input type="password" id="password" name="password" class="text-input"><br><br>
+      <input type="submit" value="Create Account" class="submit-button">
     </form>
   </body>
 </html>

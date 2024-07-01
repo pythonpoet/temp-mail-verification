@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 
 import re
-import hashlib,os
+import hashlib,os,uuid
 import logging
 import vars
 import database
 from email_handler import send_auth_token
 import random
-import concurrent.futures
-import asyncio
 import time
 import threading
 import keys
@@ -73,7 +71,6 @@ def get_domain(address):
 
 def check_if_domain_allowed(address):
     domain = get_domain(address)
-    print(domain)
     return domain in config.ALLOWED_EMAIL_DOMAINS
 
 def get_localpart(address):
@@ -140,23 +137,24 @@ def create_matrix_accout(username, displayname, password, is_admin=False):
 
 def delete_token_async(token):
     #delete interval
-    asyncio.sleep(config.TOKEN_DELETE_TIME)
+    print("delete_token_async")
+    time.sleep(config.TOKEN_DELETE_TIME)
+    print(f"delete token: {token}")
     db.delete_token(token)
 
 def send_token(email, session_id):
     # gen a unique token
-    while True:
-        token = str(random.randint(100000, 999999))
-       
-        if not db.check_token_exists(token):
-            break
+    token = str(uuid.uuid4())
+    # while True:
+    #     token = str(random.randint(100000, 999999))
+    #     if not db.check_token_exists(token):
+    #         break
 
     # write to db
     db.insert_token(token)
 
     threading.Thread(target=delete_token_async, args=(token,)).start()
     # send emal via smtp
-
     send_auth_token(email, session_id, token)
 
 def auth_email(email):
@@ -175,7 +173,6 @@ def validate_token(token):
         return False
 
 def test_credentials(code,email, username,displayname, password):
-
     if is_username_available(username):
         if create_matrix_accout(username=username,displayname=displayname,password=password):
             log_success(vars.aut_message_account_created.get(vars.language))

@@ -51,7 +51,7 @@ class Database:
         create_table_query = """
         CREATE TABLE IF NOT EXISTS token_list (
             id serial PRIMARY KEY,
-            token varchar(255) NOT NULL,
+            token text NOT NULL,
             timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
         );
         """
@@ -69,20 +69,21 @@ class Database:
 
     def check_token_exists(self, token):
         # Define the SQL command to check if the token exists
-        insert_query = "SELECT EXISTS(SELECT 1 FROM token_list WHERE token=%s);"
-        self.cursor.execute(insert_query, (token,))
+        insert_query = f"SELECT EXISTS(SELECT 1 FROM token_list WHERE token='{token}');"
+        self.cursor.execute(insert_query)
         return self.cursor.fetchone()[0]
 
     def insert_token(self, token):
         # Define the SQL command to insert a token
-        insert_query = "INSERT INTO token_list (token) VALUES (%s);"
-        self.cursor.execute(insert_query, (token,))
+        insert_query = f"INSERT INTO token_list (token) VALUES ('{token}');"
+        print("token: %s" % token)
+        self.cursor.execute(insert_query)
         self.conn.commit()
 
     def delete_token(self, token):
         # Define the SQL command to delete a token
-        delete_query = "DELETE FROM token_list WHERE token = %s;"
-        self.cursor.execute(delete_query, (token,))
+        delete_query = "DELETE FROM token_list WHERE token = '%s';"
+        self.cursor.execute(delete_query)
         self.conn.commit()
 
     def user_id_already_exists(self, user_id):
@@ -92,44 +93,12 @@ class Database:
         result = self.cursor.fetchone()
         return result is None
 
-    def create_token_list_table(self):
-        # Define the SQL command to create the table
-        create_table_query = """
-        CREATE TABLE IF NOT EXISTS token_list (
-            id serial PRIMARY KEY,
-            token varchar(255) NOT NULL,
-            timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-        );
-        """
-        # Execute the SQL command to create the table
-        self.cursor.execute(create_table_query)
-        self.conn.commit()
-        print("Token table created successfully.")
-
     def insert_userID(self,user_id:str):
         # Define the SQL command to insert the user ID into the users table
         insert_query = f"INSERT INTO users (id) VALUES ({user_id})"
         self.cursor.execute(insert_query)
         self.conn.commit()
         print(f"user id: {user_id} registered in db successfully")
-
-    def check_token_exists(self, token):
-        # Define the SQL command to check if the token exists
-        insert_query = f"SELECT EXISTS(SELECT 1 FROM token_list WHERE token={token});"
-        self.cursor.execute(insert_query)
-        return self.cursor.fetchone()[0]
-
-    def insert_token(self, token):
-        # Define the SQL command to insert a token
-        insert_query = f"INSERT INTO token_list (token) VALUES ({token});"
-        self.cursor.execute(insert_query)
-        self.conn.commit()
-
-    def delete_token(self, token):
-        # Define the SQL command to delete a token
-        delete_query = f"DELETE FROM token_list WHERE token = {token};"
-        self.cursor.execute(delete_query)
-        self.conn.commit()
 
     def user_id_already_exists(self, user_id):
         # Define the SQL command to check if the user ID exists in the users table
